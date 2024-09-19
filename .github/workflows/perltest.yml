@@ -42,6 +42,7 @@ jobs:
           perl-version: ${{ matrix.perl }}
       - run: perl -V
       - run: cpanm Module::Install
+      - run: cpanm Mojolicious Image::Magick
       - run: cpanm -n --installdeps .
       - run: prove -lv t
 
