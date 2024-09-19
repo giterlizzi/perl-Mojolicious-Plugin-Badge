@@ -3,7 +3,7 @@
 # Mojolicious::Plugin::Badge - Badge plugin for Mojolicious
 
 Mojolicious::Plugin::Badge is a Mojolicious plugin that generate "Shields.io"
-like badge from `badge` helper or via API URL (e.g. `badge/Hello-Mojo!-orange`).
+like badge from `badge` helper or via API URL (e.g. `/badge/Hello-Mojo!-orange`).
 
 ## Usage
 
@@ -16,20 +16,39 @@ plugin 'Badge';
 
 get '/my-cool-badge' => sub ($c) {
 
-my $badge = $c->app->badge(
-  label        => 'Hello',
-  message      => 'Mojo!',
-  color        => 'orange'
-  logo         => 'https://docs.mojolicious.org/mojo/logo.png'
-  badge_format => 'png',
-);
+  my $badge = $c->app->badge(
+    label        => 'Hello',
+    message      => 'Mojo!',
+    color        => 'orange'
+    logo         => 'https://docs.mojolicious.org/mojo/logo.png'
+    badge_format => 'png',
+  );
 
-$c->render(text => $badge, format => 'png');
+  $c->render(data => $badge, format => 'png');
 
 };
 ```
 ![Hello Mojo](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/hello-mojo.png)
 
+
+## Styles
+
+* ![flat-square](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/style-flat-square.png)
+* ![flat](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/style-flat.png)
+* ![for-the-badge](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/style-for-the-badge.png)
+* ![plastic](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/style-plastic.png)
+
+## Colors
+
+![blue](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/color-blue.png)
+![brightgreen](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/color-brightgreen.png)
+![green](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/color-green.png)
+![grey](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/color-grey.png)
+![lightgrey](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/color-lightgrey.png)
+![orange](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/color-orange.png)
+![red](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/color-red.png)
+![yellow](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/color-yellow.png)
+![yellowgreen](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/color-yellowgreen.png)
 
 ## Installation
 

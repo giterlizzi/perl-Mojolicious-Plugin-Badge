@@ -374,7 +374,7 @@ Mojolicious::Plugin::Badge - Badge Plugin for Mojolicious
       badge_format => 'png',
     );
 
-    $c->render(text => $badge, format => 'png');
+    $c->render(data => $badge, format => 'png');
 
   };
 
