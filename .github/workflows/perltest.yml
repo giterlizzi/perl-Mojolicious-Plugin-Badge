@@ -42,8 +42,7 @@ jobs:
           perl-version: ${{ matrix.perl }}
       - run: perl -V
       - run: apt install imagemagick
-      - run: cpanm -n Module::Install
-      - run: cpanm -n Mojolicious Image::Magick
+      - run: cpanm -n Module::Install Mojolicious Image::Magick
       - run: cpanm -n --installdeps .
       - run: prove -lv t
 
@@ -53,12 +52,11 @@ jobs:
     name: Test coverage
     steps:
       - uses: actions/checkout@v3
-      - name: Install modules Module::Install
-        run: cpanm Module::Install
-      - name: Install dependencies
+      - name: Install imagemagick
         run: apt install imagemagick
-        run: cpanm -n Module::Install
-        run: cpanm -n Mojolicious Image::Magick
+      - name: Install modules Module::Install
+        run: cpanm -n Module::Install Mojolicious Image::Magick
+      - name: Install dependencies
         run: cpanm -n --installdeps .
       - name: Coverage
         env:
