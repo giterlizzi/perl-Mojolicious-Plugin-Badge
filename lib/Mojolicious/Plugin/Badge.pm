@@ -383,9 +383,13 @@ Mojolicious::Plugin::Badge - Badge Plugin for Mojolicious
 L<Mojolicious::Plugin::Badge> is a L<Mojolicious> plugin that generate "Shields.io"
 like badge from L</badge> helper or via API URL (e.g. C</badge/Hello-Mojo!-orange>).
 
+=begin html
+
 <p>
   <img alt="Hello Mojo!" src="https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/hello-mojo.png?raw=true">
 </p>
+
+=end html
 
 =head1 OPTIONS
 
