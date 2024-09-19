@@ -33,10 +33,10 @@ get '/my-cool-badge' => sub ($c) {
 
 ## Styles
 
-* ![flat-square](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/style-flat-square.png)
 * ![flat](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/style-flat.png)
-* ![for-the-badge](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/style-for-the-badge.png)
+* ![flat-square](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/style-flat-square.png)
 * ![plastic](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/style-plastic.png)
+* ![for-the-badge](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/style-for-the-badge.png)
 
 ## Colors
 

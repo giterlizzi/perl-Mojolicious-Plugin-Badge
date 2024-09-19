@@ -10,7 +10,7 @@ use Mojo::UserAgent;
 use Mojo::Util qw(b64_encode);
 use Mojolicious::Types;
 
-our $VERSION = '1.00_TRIAL';
+our $VERSION = '1.00';
 
 use constant DEBUG => $ENV{BADGE_PLUGIN_DEBUG} || 0;
 
@@ -388,21 +388,21 @@ like badge from L</badge> helper or via API URL (e.g. C</badge/Hello-Mojo!-orang
 </p>
 
 =head1 OPTIONS
- 
+
 L<Mojolicious::Plugin::Badge> supports the following options.
- 
+
 =head2 disable_api
- 
+
   # Mojolicious::Lite
   plugin 'Badge' => {disable_api => 1};
- 
+
 Disable the L</API URL>.
- 
+
 =head2 route
- 
+
   # Mojolicious::Lite
   plugin 'Badge' => {route => app->routes->any('/stuff')};
- 
+
 L<Mojolicious::Routes::Route> object to attach the badge API URL, defaults to
 generating a new one with the prefix C</badge>.
 
@@ -607,19 +607,19 @@ Allowed styles:
 
 =item * C<flat-square>
 
-=item * C<for-the-badge>
-
 =item * C<plastic>
+
+=item * C<for-the-badge>
 
 =back
 
 =begin html
 
 <p>
-  <img alt="flat-square" src="https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/style-flat-square.png?raw=true">
   <img alt="flat" src="https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/style-flat.png?raw=true">
-  <img alt="for-the-badge" src="https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/style-for-the-badge.png?raw=true">
+  <img alt="flat-square" src="https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/style-flat-square.png?raw=true">
   <img alt="plastic" src="https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/style-plastic.png?raw=true">
+  <img alt="for-the-badge" src="https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/style-for-the-badge.png?raw=true">
 </p>
 
 =end html
