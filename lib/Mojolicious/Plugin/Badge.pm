@@ -10,7 +10,7 @@ use Mojo::UserAgent;
 use Mojo::Util qw(b64_encode);
 use Mojolicious::Types;
 
-our $VERSION = '1.00';
+our $VERSION = '1.10';
 
 use constant DEBUG => $ENV{BADGE_PLUGIN_DEBUG} || 0;
 
@@ -93,13 +93,20 @@ sub _build_options {
 
     my $id_suffix = $options{id_suffix};
 
-    my $logo  = $options{logo};
-    my $color = _decode_color($options{color} || 'informational');
-    my $link  = $options{link};
-    my $title = $options{title};
-    my $style = $options{style} || 'flat';
-
+    my $logo         = $options{logo};
+    my $color        = _decode_color($options{color} || 'informational');
+    my $link         = $options{link};
+    my $title        = $options{title};
+    my $style        = $options{style}        || 'flat';
     my $badge_format = $options{badge_format} || 'svg';
+
+    if ($style !~ /^(flat|flat-square|plastic|for-the-badge)$/) {
+        Carp::croak 'Unknown badge style';
+    }
+
+    if ($badge_format !~ /^(png|svg)$/) {
+        Carp::croak 'Unknown badge format';
+    }
 
     my $label            = $options{label} || Carp::croak 'Missing label';
     my $label_color      = _decode_color($options{label_color} || 'gray');
@@ -638,6 +645,6 @@ C<STDERR>.
 
 =head1 SEE ALSO
 
-L<Mojolicious>, L<Mojolicious::Guides>, L<https://mojolicious.org>.
+L<Mojolicious::Command::badge>, L<Mojolicious>, L<Mojolicious::Guides>, L<https://mojolicious.org>.
 
 =cut

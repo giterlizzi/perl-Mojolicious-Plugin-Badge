@@ -7,6 +7,10 @@ like badge from `badge` helper or via API URL (e.g. `/badge/Hello-Mojo!-orange`)
 
 ## Usage
 
+Create your badge ...
+
+... in `Mojolicious` or `Mojolicious::Lite` application:
+
 ```.pl
 # Mojolicious
 $self->plugin('Badge');
@@ -28,6 +32,22 @@ get '/my-cool-badge' => sub ($c) {
 
 };
 ```
+
+... via "Shields.io"-like Badge API:
+
+```
+GET /badge/Hello-Mojo!-orange.png
+```
+
+... from CLI using "badge" command:
+
+```console
+./myapp.pl badge --label "Hello" --message "Mojo!" --color "orange" --format png --file my-cool-badge.png
+```
+
+
+Output:
+
 ![Hello Mojo](https://raw.github.com/giterlizzi/perl-Mojolicious-Plugin-Badge/main/examples/hello-mojo.png)
 
 
