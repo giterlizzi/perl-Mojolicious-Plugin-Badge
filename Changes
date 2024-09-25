@@ -1,5 +1,8 @@
 Revision history Mojolicious::Plugin::Badge
 
+1.11 2024-09-25
+    - Added ~150 named colors
+
 1.10 2024-09-20
     - Added "badge" command to create badges from CLI
 
